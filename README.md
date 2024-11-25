@@ -96,24 +96,30 @@ python main.py ftp -U <usernames file> -P <password file> -host <IP> -o <output 
 
 ### SSH Brute Force
 
-1. Single username with a password file:
+1. **Display help menu for ssh brute force:**
+
+```bash
+python main.py ssh -h
+```
+
+2. Single username with a password file:
 
 ```bash
 python main.py ssh -u <username> -P <password file> -host <IP>
 ```
 
-2. Multiple usernames with a password file:
+3. Multiple usernames with a password file:
 
 ```bash
 python main.py ssh -U <usernames file> -P <password file> -host <IP>
 ```
-3. **Single username against all passwords in a file:**
+4. **Single username against all passwords in a file:**
 
 ```bash
 python main.py ssh -u <username> -P <password file> -host <IP>
 ```
 
-4. **Save output to a file:**
+5. **Save output to a file:**
 
 ```bash
 python main.py ssh -U <usernames file> -P <password file> -host <IP> -o <output file>
@@ -121,24 +127,30 @@ python main.py ssh -U <usernames file> -P <password file> -host <IP> -o <output 
 
 ### MySQL Brute Force
 
-1. Single username with a password file:
+1. **Display help menu for MySQL brute force:**
+
+```bash
+python main.py mysql -h
+```
+
+2. Single username with a password file:
 
 ```bash
 python main.py mysql -u <username> -P <password file> -host <IP>
 ```
 
-2. Multiple usernames with a password file:
+3. Multiple usernames with a password file:
 
 ```bash
 python main.py mysql -U <usernames file> -P <password file> -host <IP>
 ```
-3. **Single username against all passwords in a file:**
+4. **Single username against all passwords in a file:**
 
 ```bash
 python main.py mysql -u <username> -P <password file> -host <IP>
 ```
 
-4. **Save output to a file:**
+5. **Save output to a file:**
 
 ```bash
 python main.py mysql -U <usernames file> -P <password file> -host <IP> -o <output file>
@@ -146,19 +158,25 @@ python main.py mysql -U <usernames file> -P <password file> -host <IP> -o <outpu
 
 ### Hash Cracking
 
-1. **Crack a hash from a wordlist**
+1. **Display help menu for Hash Cracking:**
+
+```bash
+python main.py crack -h
+```
+
+2. **Crack a hash from a wordlist**
 
 ```bash
 python main.py crack -hash <hash> -t <type> -w <wordlist file>
 ```
 
-2. **Crack multiple hashes from a file:**
+3. **Crack multiple hashes from a file:**
 
 ```bash
 python main.py crack -hash-file <hash file> -t <hash type> -w <wordlist file>
 ```
 
-3. **Save output to a file:**
+4. **Save output to a file:**
 
 ```bash
 python main.py crack -hash-file <hash file> -t <hash type> -w <wordlist file> -o <output file>
