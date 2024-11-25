@@ -4,7 +4,6 @@ import argparse
 import sys
 import socket
 
-# Initialize the console for colors
 init()
 
 def is_correct(host, port, user, password, output_file=None):
@@ -43,9 +42,9 @@ def bruteforce(host, port, usernames, passwords, output_file=None):
                 result = is_correct(host, port, user, password, output_file)
                 if result == "invalid_host":
                     print(f"{Fore.RED}[!] Stopping brute force due to invalid hostname or IP.{Fore.RESET}")
-                    sys.exit(1)  # Exit the script immediately
-                elif result:  # Valid credentials found
-                    return  # Stop the brute force on successful credentials
+                    sys.exit(1) 
+                elif result: 
+                    return 
     except KeyboardInterrupt:
         print(f"\n{Fore.RED}[!] Bruteforce interrupted by user.{Fore.RESET}")
         sys.exit(1)
@@ -61,7 +60,7 @@ def ftp_bruteforce_main(args=None):
     parser.add_argument("-P", "--passlist", help="File containing a list of passwords, each on a new line")
     parser.add_argument("-o", "--output", help="File to save successful credentials")
 
-    # Parse arguments from the provided list (if any)
+
     args = parser.parse_args(args)
     host, port = args.host, args.port
     output_file = args.output
