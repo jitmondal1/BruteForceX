@@ -54,7 +54,6 @@ def brute_force_mysql(host, port, usernames, passwords, timeout, output_file):
         sys.exit(1)
 
 def mysql_bruteforce_main(args=None):
-    """Main function to parse arguments and initiate brute-forcing."""
     parser = argparse.ArgumentParser(description="MySQL brute-force script with dynamic options.")
     parser.add_argument("-host", "--host", required=True, help="Single domain or IP Address to brute-force.")
     parser.add_argument("-port", "--port", type=int, default=3306, help="MySQL port (default: 3306)")
