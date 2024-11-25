@@ -15,7 +15,7 @@
 
 ## Table of Contents:
 
-- [Installation](#installation)
+- [Installation](#Installation)
 - [Usage](#usage)
   - [General Help](#general-help)
   - [FTP Brute Force](#ftp-brute-force)
@@ -28,7 +28,7 @@
 
 ## Installation
 
-To get started with \*\*BruteForceX\*\*, follow these steps:
+To get started with **BruteForceX**, follow these steps:
 
 1. **Clone the repository:**
 
