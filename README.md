@@ -1,4 +1,4 @@
-\# BruteForceX
+# BruteForceX
 
 \*\*BruteForceX\*\* is a powerful and versatile tool designed for performing brute-force attacks on network protocols like SSH, FTP, MySQL, and cracking password hashes (MD5, SHA1, SHA256, etc.). It is built for ethical hackers, penetration testers, and cybersecurity professionals to test system vulnerabilities in a controlled and legal environment.
 
