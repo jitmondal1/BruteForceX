@@ -1,4 +1,3 @@
-# hash_cracker.py
 import hashlib
 from tqdm import tqdm
 import argparse
