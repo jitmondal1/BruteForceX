@@ -5,9 +5,6 @@
 ## Features:
 - Brute-force attacks on SSH, FTP, and MySQL login protocols.
 - Crack password hashes, including MD5, SHA1, SHA256, and more.
-- User-configurable attack settings such as wordlist selection and threading.
-- Easy-to-use command-line interface.
-- Open-source and actively maintained.
 
 ## Table of Contents:
 - [Installation](#installation)
@@ -29,3 +26,19 @@ To get started with **BruteForceX**, follow these steps:
    ```bash
    git clone https://github.com/yourusername/BruteForceX.git
    cd BruteForceX
+
+2. **Install the dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   
+3. **General Help**
+   ````bash
+   python main.py
+
+4. **FTP Brute Force**
+   a) Help Manu
+   ````bash
+   python main.py ftp -h
+    ````
+   b) 
+
