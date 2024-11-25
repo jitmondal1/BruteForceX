@@ -16,7 +16,7 @@
 ## Table of Contents:
 
 - [Installation](#Installation)
-- [Usage](#usage)
+- [Usage](#Usage)
   - [General Help](#general-help)
   - [FTP Brute Force](#ftp-brute-force)
   - [SSH Brute Force](#ssh-brute-force)
