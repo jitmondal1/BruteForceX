@@ -15,14 +15,13 @@
 
 ## Table of Contents:
 
-- [Installation](#Installation)
-- [Usage](#Usage)
+- [Installation](#installation)
+- [Usage](#usage)
   - [General Help](#general-help)
   - [FTP Brute Force](#ftp-brute-force)
   - [SSH Brute Force](#ssh-brute-force)
   - [MySQL Brute Force](#mysql-brute-force)
   - [Hash Cracking](#hash-cracking)
-- [Contributing](#contributing)
 - [Disclaimer](#disclaimer)
 
 
