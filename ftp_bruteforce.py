@@ -7,7 +7,6 @@ import socket
 init()
 
 def is_correct(host, port, user, password, output_file=None):
-    """Check if the provided username and password can authenticate with the FTP server."""
     server = ftplib.FTP()
     print(f"[!] Trying username: '{user}' with password: '{password}'")
     try:
@@ -35,7 +34,6 @@ def is_correct(host, port, user, password, output_file=None):
 
 
 def bruteforce(host, port, usernames, passwords, output_file=None):
-    """Attempts to brute force the FTP server using provided usernames and passwords."""
     try:
         for user in usernames:
             for password in passwords:
