@@ -18,7 +18,7 @@ def print_help():
     print("   python main.py mysql -h\n")
 
     print("5. Hash Cracker:")
-    print("   python main.py crack -h\n")
+    print("   python main.py hash -h\n")
 
     print("Use '-h' with each command to view specific options.\n")
 
@@ -37,7 +37,7 @@ def main():
         ssh_bruteforce_main(service_args)
     elif service == "mysql":
         mysql_bruteforce_main(service_args)
-    elif service == "crack":
+    elif service == "hash":
         hash_cracker_main(service_args)
     else:
         print(f"Error: Service '{service}' is not supported.")
