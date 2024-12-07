@@ -161,25 +161,25 @@ python main.py mysql -U <usernames file> -P <password file> -host <IP> -o <outpu
 1. **Display help menu for Hash Cracking:**
 
 ```bash
-python main.py crack -h
+python main.py hash -h
 ```
 
 2. **Crack a hash from a wordlist**
 
 ```bash
-python main.py crack -hash <hash> -t <type> -w <wordlist file>
+python main.py hash -hash <hash> -t <type> -w <wordlist file>
 ```
 
 3. **Crack multiple hashes from a file:**
 
 ```bash
-python main.py crack -hash-file <hash file> -t <hash type> -w <wordlist file>
+python main.py hash -hash-file <hash file> -t <hash type> -w <wordlist file>
 ```
 
 4. **Save output to a file:**
 
 ```bash
-python main.py crack -hash-file <hash file> -t <hash type> -w <wordlist file> -o <output file>
+python main.py hash -hash-file <hash file> -t <hash type> -w <wordlist file> -o <output file>
 ```
 
 ## Disclaimer
